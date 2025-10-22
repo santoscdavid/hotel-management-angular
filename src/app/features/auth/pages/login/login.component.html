@@ -1,0 +1,37 @@
+<div class="login-container">
+  <h1>Entrar</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      [class.invalid]="form.get('email')?.invalid && form.get('email')?.touched"
+    />
+    @if (form.get('email')?.invalid && form.get('email')?.touched) {
+    <div class="error">
+      <small>Email inválido</small>
+    </div>
+    }
+
+    <label for="password">Senha</label>
+    <input
+      id="password"
+      type="password"
+      formControlName="password"
+      [class.invalid]="form.get('password')?.invalid && form.get('password')?.touched"
+    />
+    @if (form.get('password')?.invalid && form.get('password')?.touched) {
+    <div class="error">
+      <small>Senha mínima de 6 caracteres</small>
+    </div>
+    }
+
+    <button type="submit" [disabled]="loading()">Entrar</button>
+
+    @if (errorMessage()) {
+    <p class="error-message">{{ errorMessage() }}</p>
+    }
+  </form>
+</div>
