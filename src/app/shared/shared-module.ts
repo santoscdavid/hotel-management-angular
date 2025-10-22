@@ -4,22 +4,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HasErrorPipe } from './pipes/has-error.pipe';
+import { DateFormatPipe } from './pipes/datetime.pipe';
 
 @NgModule({
-  declarations: [LoaderComponent, HasErrorPipe],
+  declarations: [LoaderComponent, HasErrorPipe, DateFormatPipe],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
-    // Módulos do Angular
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
 
-    // Componentes
     LoaderComponent,
 
-    // Pipes
     HasErrorPipe,
+    DateFormatPipe,
   ],
 })
 export class SharedModule {}
