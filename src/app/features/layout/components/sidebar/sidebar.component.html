@@ -1,0 +1,9 @@
+<nav class="sidebar" [class.closed]="!open">
+  <ul>
+    <li (click)="navigateTo('/dashboard')">Dashboard</li>
+    <li (click)="navigateTo('/reservations')">Reservas</li>
+    <li (click)="navigateTo('/guests')">Hóspedes</li>
+    <li (click)="navigateTo('/rooms')">Quartos</li>
+    <li (click)="navigateTo('/settings')">Configurações</li>
+  </ul>
+</nav>

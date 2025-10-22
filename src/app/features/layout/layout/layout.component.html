@@ -1,0 +1,17 @@
+<div class="layout">
+  <!-- Header -->
+  <app-header (menuToggle)="toggleSidebar()"></app-header>
+
+  <div class="layout-body">
+    <!-- Sidebar -->
+    <app-sidebar [open]="sidebarOpen"></app-sidebar>
+
+    <!-- Main content -->
+    <main class="layout-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>
